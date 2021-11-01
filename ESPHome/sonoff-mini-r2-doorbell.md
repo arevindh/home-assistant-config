@@ -1,4 +1,4 @@
-Product link : [Amazon](https://www.amazon.in/AC100-240V-Compatible-Assistant-Supports-Firmware/dp/B07WJFHBMT)
+Product link : [Amazon](https://www.amazon.in/Sonoff-Traditional-Switch-Internet-Amazon/dp/B07VLY4SVW/)
 
 Description : Connect switch between S1 and S2 and Regular doorbell at output. The device will auto power off in 200ms after switch on.
 
