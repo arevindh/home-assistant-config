@@ -1,3 +1,8 @@
+Product link :  [Robu](https://robu.in/product/pzem-004t-multi-function-ac-power-monitor-module/) [Techtonics](https://www.techtonics.in/peacefair-pzem-004t-ac-multi-function-electric-energy-metering-power-monitor)
+
+Description: 
+
+```yaml
 esphome:
   name: kseb
   platform: ESP8266
@@ -52,3 +57,5 @@ sensor:
     power_factor:
       name: "KSEB Grid Power Factor"
     update_interval: 5s
+    
+```
