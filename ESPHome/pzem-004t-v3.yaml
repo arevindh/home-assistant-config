@@ -1,0 +1,65 @@
+esphome:
+  name: kseb
+  platform: ESP8266
+  board: d1_mini
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+# api:
+
+ota:
+  password: !secret device_pass
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_pass
+  
+  # manual_ip:
+  #   # Set this to the IP of the ESP
+  #   static_ip: 10.0.28.124
+  #   # Set this to the IP address of the router. Often ends with .1
+  #   gateway: 10.0.28.1
+  #   # The subnet of the network. 255.255.255.0 works for most home networks.
+  #   subnet: 255.255.255.0
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap:
+    ssid: "Kseb Fallback Hotspot"
+    password: !secret failback_pass
+  power_save_mode: none
+captive_portal:
+
+api:
+  password: !secret device_pass
+
+uart:
+  rx_pin: D1
+  tx_pin: D2
+  baud_rate: 9600
+
+modbus:
+
+sensor:
+  - platform: pzemac
+    current:
+      name: "KSEB Grid Current"
+      filters:
+        - calibrate_linear:
+            - 0.0 -> 0.0
+            - 0.593 -> 0.58
+            - 1.412 -> 1.37
+            - 1.799 -> 1.77
+            - 1.817 -> 1.78
+    voltage:
+      name: "KSEB Grid Voltage"
+    energy:
+      name: "KSEB Grid Energy"
+    power:
+      name: "KSEB Grid Power"
+    frequency:
+      name: "KSEB Grid Frequency"
+    power_factor:
+      name: "KSEB Grid Power Factor"
+    update_interval: 5s
