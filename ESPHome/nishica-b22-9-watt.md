@@ -28,7 +28,7 @@ api:
 
 
 ota:
-  password: !secret device_pass
+  password: !secret ota_password
   
 light:
   - platform: cwww
