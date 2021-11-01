@@ -1,3 +1,8 @@
+Product link : NA
+
+Description : Work in progress 
+
+```yaml
 esphome:
   name: alpha-node-01
   platform: ESP8266
@@ -23,3 +28,5 @@ wifi:
     password: !secret failback_pass
 
 captive_portal:
+
+```
