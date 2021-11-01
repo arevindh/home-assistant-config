@@ -1,4 +1,4 @@
-Product link : https://www.amazon.in/gp/product/B07KGFQTV5/ref=ppx_yo_dt_b_asin_title_o06_s00?ie=UTF8&psc=1
+Product link : (Amazon.in)[https://www.amazon.in/gp/product/B07KGFQTV5/]
 
 Details : Only White is usable in current situation 
 
