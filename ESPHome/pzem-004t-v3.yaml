@@ -15,14 +15,6 @@ ota:
 wifi:
   ssid: !secret wifi_ssid
   password: !secret wifi_pass
-  
-  # manual_ip:
-  #   # Set this to the IP of the ESP
-  #   static_ip: 10.0.28.124
-  #   # Set this to the IP address of the router. Often ends with .1
-  #   gateway: 10.0.28.1
-  #   # The subnet of the network. 255.255.255.0 works for most home networks.
-  #   subnet: 255.255.255.0
 
   # Enable fallback hotspot (captive portal) in case wifi connection fails
   ap:
