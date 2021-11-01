@@ -6,9 +6,6 @@ esphome:
 # Enable logging
 logger:
 
-# Enable Home Assistant API
-# api:
-
 ota:
   password: !secret device_pass
 
