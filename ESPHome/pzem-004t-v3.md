@@ -1,6 +1,6 @@
-Product link :  [Robu](https://robu.in/product/pzem-004t-multi-function-ac-power-monitor-module/) [Techtonics](https://www.techtonics.in/peacefair-pzem-004t-ac-multi-function-electric-energy-metering-power-monitor)
+Product link :  [Robu](https://robu.in/product/pzem-004t-multi-function-ac-power-monitor-module/), [Techtonics](https://www.techtonics.in/peacefair-pzem-004t-ac-multi-function-electric-energy-metering-power-monitor) | [ESPHome](https://esphome.io/components/sensor/pzemac.html)
 
-Description: 
+Description: This Peacefair PZEM-004T Multi-function AC Power Monitor is very popular in electrical consumption measurement projects. It is capable of measuring four interrelated electrical variables as voltage, current, power, and energy. 
 
 ```yaml
 esphome:
