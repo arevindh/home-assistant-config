@@ -12,7 +12,7 @@ esphome:
 logger:
 
 ota:
-  password: !secret device_pass
+  password: !secret ota_password
 
 wifi:
   ssid: !secret wifi_ssid
