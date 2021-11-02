@@ -47,4 +47,21 @@ wifi:
 
 captive_portal:
 
+binary_sensor:
+  - platform: gpio
+    name: "Test Switch 1"
+    pin: GPIO03
+    id: switch_1
+    on_press:
+      - switch.toggle:
+          id: relay_1
+
+  - platform: gpio
+    name: "Test Switch 2"
+    pin: GPIO12
+    id: switch_2
+    on_press:
+      - switch.toggle:
+          id: relay_2
+
 ```
