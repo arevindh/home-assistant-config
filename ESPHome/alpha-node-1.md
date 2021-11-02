@@ -2,6 +2,11 @@ Product link : NA
 
 Description : Work in progress 
 
+Pinout
+
+GPIO 13 -> Relay 1
+GPIO 14 -> Relay 2
+
 ```yaml
 esphome:
   name: alpha-node-01
