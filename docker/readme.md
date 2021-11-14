@@ -1,5 +1,11 @@
 ## Mosquitto Config
 
+Change to data dir 
+
+`mkdir -p mosquitto/config`
+
+`sudo nano mosquitto.conf`
+
 ```
 #### mosquitto.conf file contents - Dont give spaces between lines ####
 persistence true
