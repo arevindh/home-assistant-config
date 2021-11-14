@@ -50,10 +50,9 @@ To remove a user from a password file:
 
 ### Add new user 
 
-Note username should be same as your login username
+Note : username should be same as your login username
 
 `sudo smbpasswd -a username`
-
 
 `sudo nano /etc/samba/smb.conf`
 
