@@ -42,3 +42,51 @@ To remove a user from a password file:
 `mosquitto_passwd -D <password file> <username>`
 
 
+## Install samba for local management 
+
+`sudo apt update`
+
+`sudo apt install samba`
+
+### Add new user 
+
+Note username should be same as your login username
+
+`sudo smbpasswd -a username`
+
+
+`sudo nano /etc/samba/smb.conf`
+
+Add
+
+```
+server min protocol = SMB3
+
+[ha-stack]
+   comment = Home assistant
+   path = /path/to/data/folder
+   writable = yes
+   ;guest ok = yes
+   ;guest only = yes
+   read only = no
+   create mode = 0777
+   directory mode = 0777
+   force user = nobody
+   create mask = 0777
+   directory mask = 0777
+   force user = root
+   force create mode = 0777
+   force directory mode = 0777
+   hosts allow =
+   
+````
+
+Remove 
+
+```
+map to guest = bad user
+```
+
+### Restart samba
+
+`sudo service smbd restart`
