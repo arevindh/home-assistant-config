@@ -1,0 +1,87 @@
+version: '3'
+services:
+  phpmyadmin:
+    image: phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - 8080:80
+    environment:
+      - PMA_ARBITRARY=1
+      - UPLOAD_LIMIT=1G
+    depends_on:
+      - mariadb
+    networks:
+      - ha_network
+
+  mariadb:
+    container_name: mariadb
+    image: mariadb:10.5
+    environment:
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD}
+      MYSQL_DATABASE: homeassistant
+      MYSQL_USER: homeassistant
+      MYSQL_PASSWORD: ${HA_MYSQL_PASSWORD}
+    logging:
+      driver: syslog
+      options:
+        tag: "{{.DaemonName}}(image={{.ImageName}};name={{.Name}};id={{.ID}})"
+    networks:
+      - ha_network
+    ports:
+      - 3306:3306
+    restart: always
+    volumes:
+      - ${DOCKER_DATA}/mariadb:/var/lib/mysql
+
+  homeassistant:
+    container_name: hass
+    image: homeassistant/home-assistant
+    volumes:
+      - ${DOCKER_DATA}/homeassistant/:/config
+      -  /etc/localtime:/etc/localtime:ro
+    restart: unless-stopped
+    #devices:
+    #  - /dev/ttyUSB0:/dev/ttyUSB0:rwm
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://127.0.0.1:8123"]
+      interval: 30s
+      timeout: 10s
+      retries: 6
+    network_mode: host
+    depends_on:
+      - mosquitto
+      - mariadb
+
+  esphome:
+    image: esphome/esphome
+    container_name: esphome
+    restart: always
+    environment:
+      PASSWORD: ${ESPHOME_PASSWORD}
+      USERNAME: ${ESPHOME_USERNAME}
+      ESPHOME_DASHBOARD_RELATIVE_URL: "/esphome/"
+    volumes:
+      - ${DOCKER_DATA}/esphome:/config:rw
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    command: config/ dashboard
+    network_mode: host
+
+  mosquitto:
+    image: eclipse-mosquitto:latest
+    container_name: mosquitto
+    restart: always
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ${DOCKER_DATA}/mosquitto/data:/mosquitto/data
+      - ${DOCKER_DATA}/mosquitto/log:/mosquitto/log
+      - ${DOCKER_DATA}/mosquitto/config:/mosquitto/config
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/timezone:/etc/timezone:ro
+
+
+networks:
+  ha_network:
