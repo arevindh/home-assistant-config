@@ -1,3 +1,22 @@
+
+## Create Data Folder and docker-compose folder
+
+`mkdir homeassistant`
+
+`cd homeassistant`
+
+### Get `docker-compose.yml` and `.env` files.
+
+`wget https://raw.githubusercontent.com/arevindh/home-assistant-config/main/docker/docker-compose.yml`
+
+`wget -O .env https://raw.githubusercontent.com/arevindh/home-assistant-config/main/docker/example.env`
+
+### Configure ENV
+
+`nano .env`
+
+Edit env file and save with data
+
 ## Mosquitto Config
 
 Change to data dir 
@@ -20,6 +39,10 @@ password_file /mosquitto/data/mosquitto.password_file
 ####################################################################
 
 ```
+
+## Deploy the stack
+
+`sudo docker-compose up -d`
 
 ## Adding user in mosquitto 
 
