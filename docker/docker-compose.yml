@@ -60,7 +60,7 @@ services:
     environment:
       PASSWORD: ${ESPHOME_PASSWORD}
       USERNAME: ${ESPHOME_USERNAME}
-      ESPHOME_DASHBOARD_RELATIVE_URL: "/esphome/"
+      ESPHOME_DASHBOARD_RELATIVE_URL: "/"
     volumes:
       - ${DOCKER_DATA}/esphome:/config:rw
       - /etc/timezone:/etc/timezone:ro
