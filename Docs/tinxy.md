@@ -2,16 +2,17 @@
 
 ## Tasmota config 
 
-Template
-
-```
-{"NAME":"Tinxy 6 Node","GPIO":[224,0,0,0,225,226,0,0,320,227,228,229,0,0],"FLAG":0,"BASE":18}
-```
 
 And 2 rules, one for controlling the relays and one for manual switch operation
 
 
 ### 4 Node 
+
+Template
+
+```
+{"NAME":"Tinxy 4 Node","GPIO":[224,0,0,0,225,226,0,0,288,227,0,0,0,0],"FLAG":0,"BASE":18}
+```
 
 ```
 
@@ -44,6 +45,10 @@ rule2 1
 
 
 ### 6 Node 
+
+```
+{"NAME":"Tinxy 6 Node","GPIO":[224,0,0,0,225,226,0,0,320,227,228,229,0,0],"FLAG":0,"BASE":18}
+```
 
 ```
 rule1 
