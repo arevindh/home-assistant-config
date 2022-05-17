@@ -78,7 +78,6 @@ on SerialReceived#Data=;61; do Power6 1 endon
 ```
 
 
-The 6 node I have on hand uses the GPIO pins 1 and 3 as a hardware serial bridge. 
-
+The 6 node uses the GPIO pins 1 and 3 as a hardware serial bridge. 
 
 [source](https://forum.tinxy.in/t/flashing-custom-firmware-like-tasmota-or-esphome-and-then-restoring-back-to-original/32/24)
