@@ -1,6 +1,9 @@
 [Buy](https://www.tatacliq.com/polycab-hohm-avenir-llp0103084-20w-smart-wi-fi-led-batten-white/p-mp000000011272731)
 
+Name: Polycab Hohm Avenir LLP0103084 20W Smart Wi-Fi LED Batten (White)
+
 Fashing methord : Serial
+
 Chip : ESP8266EX
 
 ```
