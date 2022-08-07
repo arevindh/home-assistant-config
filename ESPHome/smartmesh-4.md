@@ -4,6 +4,8 @@ Description : 4 relays , 4 switches 1 Buzzer
 
 Working perfectly
 
+Mine had an issue with pcb Switch 4 was not properly connected GPIO2, so I used a wire to connect it
+
 Pinout
 
 ![1-pinout](https://user-images.githubusercontent.com/693151/183081837-cb54f5fb-9846-450d-8cb2-b169b4100e19.jpg)
@@ -18,9 +20,9 @@ binary_sensor:
       inverted: True
     name: "Smartmesh Switch 2"
     on_press:
-      - switch.turn_on: relay_1
+      - switch.turn_on: relay_2
     on_release:
-      - switch.turn_off: relay_1
+      - switch.turn_off: relay_2
     
   - platform: gpio
     pin:
@@ -29,9 +31,9 @@ binary_sensor:
     name: "Smartmesh Switch 3"
     internal: true
     on_press:
-      - switch.turn_on: relay_2
+      - switch.turn_on: relay_3
     on_release:
-      - switch.turn_off: relay_2
+      - switch.turn_off: relay_3
       
   - platform: gpio
     pin:
@@ -40,9 +42,9 @@ binary_sensor:
     name: "Smartmesh Switch 4"
     internal: true
     on_press:
-      - switch.turn_on: relay_3
+      - switch.turn_on: relay_4
     on_release:
-      - switch.turn_off: relay_3
+      - switch.turn_off: relay_4
     
   - platform: gpio
     pin:
@@ -51,9 +53,9 @@ binary_sensor:
     name: "Smartmesh Switch 1"
     internal: true
     on_press:
-      - switch.turn_on: relay_4
+      - switch.turn_on: relay_1
     on_release:
-      - switch.turn_off: relay_4
+      - switch.turn_off: relay_1
 
 switch:
   - platform: gpio
