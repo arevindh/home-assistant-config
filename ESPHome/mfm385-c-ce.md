@@ -1,3 +1,5 @@
+
+```
 esphome:
   name: mfm384
   friendly_name: mfm384
@@ -243,3 +245,6 @@ sensor:
     register_type: read
     value_type: FP32_R
     accuracy_decimals: 1
+
+
+```
